@@ -1,0 +1,169 @@
+/* General Styles */
+.cards-section {
+    padding: 4rem 8%;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.card {
+    background: #9ce9be;
+    border-radius: 19px;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    width: calc(25% - 2rem);
+    margin: 1rem 0;
+}
+
+.card-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.price {
+    font-weight: bold;
+}
+
+.SHORTS {
+    height: 00px;
+    width: 250px;
+}
+
+.content {
+    margin-left: 700px;
+}
+
+button:hover {
+    background-color: darken(var(--primary-color), 10%);
+}
+
+/* About Image Container */
+.about-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    max-width: 100%;
+}
+
+.about-img1 {
+    width: 50%;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about-img {
+    width: 40%;
+    height: auto;
+    border-radius: 0 0 8px 8px;
+    margin-top: -5px;
+    margin-left: -25%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Search Form */
+.search-form {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.search-input {
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 4px 0 0 4px;
+    border: 2px solid #ccc;
+    width: 300px;
+    outline: none;
+    height: 44px;
+}
+
+.search-btn {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #333;
+    color: white;
+    border: 2px solid #fff;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-btn i {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+.search-btn:hover {
+    background-color: #555;
+    border-color: #fff;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For tablets and smaller screens */
+@media (max-width: 768px) {
+    .card {
+        width: calc(50% - 2rem); /* 2 cards per row */
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+    .about-img1, .about-img {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .search-input {
+        width: 200px;
+    }
+
+    .search-btn {
+        width: auto; /* Adjust button width */
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+    .card {
+        width: 100%; /* Full width cards */
+        margin: 0.5rem 0; /* Reduced margin */
+    }
+
+    .search-input {
+        width: 100%; /* Full width input field */
+        border-radius: 4px 4px 0 0; /* Adjust border radius */
+        margin-bottom: 0; /* Remove margin bottom */
+    }
+
+    .search-btn {
+        width: 100%; /* Full width button */
+        border-radius: 0 0 4px 4px; /* Adjust border radius */
+    }
+
+    .about-img1, .about-img {
+        width: 100%; /* Full width images */
+        margin-left: 0; /* Reset margin */
+    }
+}
