@@ -70,7 +70,8 @@ const ProductDetail = () => {
 
       if (response.status === 200) {
         console.log(`Product ${productId} added to cart`);
-        toast.success(`Product ${productId} added to cart!`);
+        alert("your product added succesfully to the cart")
+
       } else {
         console.error('Failed to add product to cart');
       }
@@ -94,6 +95,8 @@ const ProductDetail = () => {
         {
           productId,
           userId,
+          quantity,
+          size: selectedSize
         },
         {
           headers: {
@@ -104,6 +107,7 @@ const ProductDetail = () => {
 
       if (response.status === 200) {
         console.log(`Product ${productId} added to wishlist`);
+        alert('your product added succesfully to the cart')
       } else {
         console.error('Failed to add product to wishlist');
       }

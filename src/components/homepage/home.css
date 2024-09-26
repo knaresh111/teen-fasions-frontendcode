@@ -1,169 +1,149 @@
-/* General Styles */
-.cards-section {
-    padding: 4rem 8%;
+/* Overall section for home page */
+.home {
+    position: relative;
+    color: #fff;
+    text-align: center;
+    padding: 60px 10px; /* Adjust padding for smaller screens */
+    background: url('../../assets/images/home-4.jpg') no-repeat center center/cover;
+    height: 300px; /* Adjust height for smaller screens */
+    width: 100%;
+    box-sizing: border-box; /* Ensures padding and border are included in the width and height */
 }
 
-.card-container {
+/* Content within home section */
+.home .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%; /* Use a percentage for responsive width */
+    width: 100%;
+    text-align: center;
+    padding: 0 10px; /* Reduced padding for smaller screens */
+    box-sizing: border-box;
+}
+
+/* Search form styling */
+.home .search-form {
+    margin-bottom: 15px; /* Reduced margin for mobile */
     display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-}
-
-.card {
-    background: #9ce9be;
-    border-radius: 19px;
-    box-shadow: var(--box-shadow);
-    overflow: hidden;
-    width: calc(25% - 2rem);
-    margin: 1rem 0;
-}
-
-.card-image {
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-}
-
-.card-content {
-    padding: 1.5rem;
-}
-
-.card-footer {
-    display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* Stack input and button vertically */
     align-items: center;
-    padding: 1rem 0;
 }
 
-.price {
-    font-weight: bold;
+.home .search-input {
+    padding: 8px;
+    font-size: 14px; /* Smaller font size */
+    width: 90%; /* Adjust width for mobile screens */
+    max-width: 300px; /* Limit width for larger screens */
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 10px; /* Space between input and button */
 }
 
-.SHORTS {
-    height: 00px;
-    width: 250px;
-}
-
-.content {
-    margin-left: 700px;
-}
-
-button:hover {
-    background-color: darken(var(--primary-color), 10%);
-}
-
-/* About Image Container */
-.about-image {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
-    max-width: 100%;
-}
-
-.about-img1 {
-    width: 50%;
-    height: auto;
-    border-radius: 8px 8px 0 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.about-img {
-    width: 40%;
-    height: auto;
-    border-radius: 0 0 8px 8px;
-    margin-top: -5px;
-    margin-left: -25%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Search Form */
-.search-form {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.search-input {
-    padding: 12px;
-    font-size: 16px;
-    border-radius: 4px 0 0 4px;
-    border: 2px solid #ccc;
-    width: 300px;
-    outline: none;
-    height: 44px;
-}
-
-.search-btn {
-    padding: 10px 15px;
-    font-size: 16px;
-    background-color: #333;
-    color: white;
-    border: 2px solid #fff;
-    border-radius: 0 4px 4px 0;
+.home .search-btn {
+    padding: 10px 15px; /* Reduced padding */
+    font-size: 14px; /* Smaller font size */
+    background-color: #febd69;
+    color: #111;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
-    height: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.search-btn i {
-    margin-right: 8px;
-    font-size: 18px;
+.home .search-btn:hover {
+    background-color: #f3a847;
 }
 
-.search-btn:hover {
-    background-color: #555;
-    border-color: #fff;
+/* Main heading */
+.home h3 {
+    font-size: 24px; /* Smaller font size */
+    font-weight: bold;
+    margin: 15px 0; /* Reduced margin */
+    line-height: 1.2;
 }
 
-/* Media Queries for Responsiveness */
-
-/* For tablets and smaller screens */
-@media (max-width: 768px) {
-    .card {
-        width: calc(50% - 2rem); /* 2 cards per row */
-    }
-
-    .content {
-        margin-left: 0;
-    }
-
-    .about-img1, .about-img {
-        width: 100%;
-        margin-left: 0;
-    }
-
-    .search-input {
-        width: 200px;
-    }
-
-    .search-btn {
-        width: auto; /* Adjust button width */
-    }
+/* Paragraph text */
+.home p {
+    font-size: 16px; /* Smaller font size */
+    margin: 10px 0;
+    line-height: 1.6;
 }
 
-/* For mobile phones */
-@media (max-width: 480px) {
-    .card {
-        width: 100%; /* Full width cards */
-        margin: 0.5rem 0; /* Reduced margin */
-    }
-
-    .search-input {
-        width: 100%; /* Full width input field */
-        border-radius: 4px 4px 0 0; /* Adjust border radius */
-        margin-bottom: 0; /* Remove margin bottom */
-    }
-
-    .search-btn {
-        width: 100%; /* Full width button */
-        border-radius: 0 0 4px 4px; /* Adjust border radius */
-    }
-
-    .about-img1, .about-img {
-        width: 100%; /* Full width images */
-        margin-left: 0; /* Reset margin */
-    }
+/* Button styling */
+.home .btn {
+    display: inline-block;
+    background-color: #febd69;
+    color: #111;
+    padding: 10px 20px; /* Reduced padding */
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px; /* Smaller font size */
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 15px; /* Reduced space above the button */
 }
+
+.home .btn:hover {
+    background-color: #f3a847;
+    transform: scale(1.05);
+}
+
+
+@keyframes scroll-text {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Styling for text block */
+.text-block {
+    width: 90%; /* Adjust width for smaller screens */
+    max-width: 500px; /* Limit width for larger screens */
+    background-color: #fff;
+    color: #111;
+    text-align: center;
+    padding: 15px; /* Reduced padding */
+    margin: 15px auto; /* Center text block with reduced margin */
+}
+
+.text-block p {
+    font-size: 16px; /* Smaller font size */
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Styles for SearchResults component */
+.search-results {
+    padding: 15px; /* Reduced padding */
+    background-color: #f9f9f9;
+}
+
+.search-results h1 {
+    font-size: 24px; /* Smaller font size */
+    margin-bottom: 15px; /* Reduced margin */
+    line-height: 1.2;
+}
+
+.search-results ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.search-results li {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    text-align: center; /* Center text inside list items */
+}
+
+.search-results li p {
+    font-size: 16px; /* Smaller font size */
+    margin: 0;
+    line-height: 1.6;
+}
+

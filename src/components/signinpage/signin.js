@@ -8,6 +8,9 @@ import { useNavigate } from "react-router-dom";
 import BASE_URL from '../../config';
 import backgroundImage from '../../assets/images/home-4.jpg';
 import { ToastContainer, toast } from 'react-toastify';
+import SimpleFooter from '../Footers/SimpleFooters';
+import Header from '../header/header';
+
 import 'react-toastify/dist/ReactToastify.css';
 
 

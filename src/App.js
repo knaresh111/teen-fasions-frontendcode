@@ -11,6 +11,7 @@ import CartPage from './components/cart/cart.js';
 import PaymentPage from './components/paymentpage/payment.js';
 import Allproduct from './components/Allproducts/allproduct.js';
 import MyOrder from './components/myorder/myorder.js';
+import Wishlist from './components/wishlist/wishlist.js';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
@@ -31,6 +32,8 @@ function App() {
             <Route exact path='/ProductUpload' element={<ProductUpload />} />
             <Route exact path='/homePage' element={<Homepage />} />
             <Route exact path='/allproduct' element={<Allproduct />} />
+            <Route exact path='/wishlist' element={<Wishlist />} />
+
              
             <Route exact path="/product/:id" element={<ProductDetail/>} />
         

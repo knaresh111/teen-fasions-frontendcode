@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './signup.css';  // Import the new CSS file
+import Header from '../header/header';
+
+import SimpleFooter from '../Footers/SimpleFooters';
+
 
 const OtpSignup = () => {
     const [signupData, setSignupData] = useState({
@@ -53,6 +57,8 @@ const OtpSignup = () => {
     };
 
     return (
+        <>
+        <Header/>
         <div className="container">
             <div className="form-container">
                 {errorMessage && <p className="error">{errorMessage}</p>}
@@ -124,6 +130,7 @@ const OtpSignup = () => {
                 )}
             </div>
         </div>
+        </>
     );
 };
 

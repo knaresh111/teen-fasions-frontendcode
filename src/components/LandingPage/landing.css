@@ -1,169 +1,167 @@
-/* General Styles */
-.cards-section {
-    padding: 4rem 8%;
-}
-
-.card-container {
+/* Overall section for landing page */
+.home-section {
+    position: relative;
+    color: #060606;
+    text-align: center;
+    padding: 60px 15px; /* Adjusted padding for smaller screens */
+    background: url('../../assets/images/home-4.jpg') no-repeat center center/cover;
+    background-attachment: fixed; /* This creates a parallax scrolling effect */
+    height: 400px; /* Adjusted height for smaller screens */
+    width: 100%;
+    box-sizing: border-box;
     display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-}
-
-.card {
-    background: #9ce9be;
-    border-radius: 19px;
-    box-shadow: var(--box-shadow);
-    overflow: hidden;
-    width: calc(25% - 2rem);
-    margin: 1rem 0;
-}
-
-.card-image {
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-}
-
-.card-content {
-    padding: 1.5rem;
-}
-
-.card-footer {
-    display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 1rem 0;
+    margin-top: 50px; /* Reduced margin for smaller screens */
+    transition: background 0.3s ease; /* Smooth background transitions */
 }
 
-.price {
+/* Content within the home section */
+.home-content {
+    max-width: 90%; /* Adjusted width for responsiveness */
+    width: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+    padding: 15px; /* Reduced padding for smaller screens */
+    border-radius: 10px;
+}
+
+.home-content h3 {
+    font-size: 28px; /* Adjusted font size for smaller screens */
     font-weight: bold;
+    margin: 15px 0; /* Reduced margin for smaller screens */
+    text-transform: uppercase;
 }
 
-.SHORTS {
-    height: 00px;
-    width: 250px;
+.home-content p {
+    font-size: 16px; /* Adjusted font size for smaller screens */
+    margin: 10px 0;
+    line-height: 1.5;
 }
 
-.content {
-    margin-left: 700px;
+/* Background transition effects (for switching images) */
+@keyframes backgroundSwitch {
+    0% {
+        background-image: url('../../assets/images/home-11.jpg');
+    }
+    50% {
+        background-image: url('../../assets/images/home-9.jpg'); /* Another image */
+    }
+    100% {
+        background-image: url('../../assets/images/home-10.jpg'); /* Back to original */
+    }
 }
 
-button:hover {
-    background-color: darken(var(--primary-color), 10%);
+/* Add animation to smoothly transition between background images */
+.home-section {
+    animation: backgroundSwitch 15s infinite; /* Change duration for smoother/slower transitions */
 }
 
-/* About Image Container */
-.about-image {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
-    max-width: 100%;
-}
-
-.about-img1 {
-    width: 50%;
-    height: auto;
-    border-radius: 8px 8px 0 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.about-img {
-    width: 40%;
-    height: auto;
-    border-radius: 0 0 8px 8px;
-    margin-top: -5px;
-    margin-left: -25%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Search Form */
+/* Search bar styling */
 .search-form {
+    margin-bottom: 15px; /* Reduced margin for smaller screens */
     display: flex;
+    flex-direction: column; /* Stacked vertically on smaller screens */
     align-items: center;
-    margin-top: 20px;
 }
 
 .search-input {
-    padding: 12px;
-    font-size: 16px;
-    border-radius: 4px 0 0 4px;
-    border: 2px solid #ccc;
-    width: 300px;
-    outline: none;
-    height: 44px;
+    padding: 10px; /* Reduced padding */
+    font-size: 14px; /* Adjusted font size */
+    width: 90%; /* Full width with a maximum width */
+    max-width: 300px; /* Limit width for larger screens */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px; /* Space between input and button */
 }
 
 .search-btn {
-    padding: 10px 15px;
-    font-size: 16px;
-    background-color: #333;
-    color: white;
-    border: 2px solid #fff;
-    border-radius: 0 4px 4px 0;
+    padding: 10px 15px; /* Reduced padding */
+    font-size: 14px; /* Adjusted font size */
+    background-color: #febd69;
+    color: #111;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.search-btn i {
-    margin-right: 8px;
-    font-size: 18px;
+    margin-left: 0; /* Remove margin on smaller screens */
 }
 
 .search-btn:hover {
-    background-color: #555;
-    border-color: #fff;
+    background-color: #f3a847;
 }
 
-/* Media Queries for Responsiveness */
+/* Button styling */
+.btn {
+    display: inline-block;
+    background-color: #febd69;
+    color: #111;
+    padding: 10px 20px; /* Adjusted padding */
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px; /* Adjusted font size */
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 15px; /* Adjusted margin for smaller screens */
+}
 
-/* For tablets and smaller screens */
+.btn:hover {
+    background-color: #f3a847;
+    transform: scale(1.05);
+}
+
+/* Footer section */
+.footer {
+    background-color: #131a22;
+    color: #fff;
+    padding: 15px; /* Reduced padding */
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 12px; /* Adjusted font size */
+    color: #ddd;
+}
+
+/* Responsive styling */
 @media (max-width: 768px) {
-    .card {
-        width: calc(50% - 2rem); /* 2 cards per row */
+    .home-section {
+        height: 350px; /* Further adjusted height for smaller screens */
+        padding: 40px 10px; /* Further adjusted padding */
     }
 
-    .content {
-        margin-left: 0;
+    .home-content {
+        padding: 10px; /* Further reduced padding */
     }
 
-    .about-img1, .about-img {
-        width: 100%;
-        margin-left: 0;
+    .home-content h3 {
+        font-size: 24px; /* Further adjusted font size */
     }
 
-    .search-input {
-        width: 200px;
+    .home-content p {
+        font-size: 14px; /* Further adjusted font size */
     }
 
-    .search-btn {
-        width: auto; /* Adjust button width */
-    }
-}
-
-/* For mobile phones */
-@media (max-width: 480px) {
-    .card {
-        width: 100%; /* Full width cards */
-        margin: 0.5rem 0; /* Reduced margin */
+    .search-input, .search-btn {
+        width: 100%; /* Full width on smaller screens */
+        max-width: none; /* Remove maximum width restriction */
     }
 
-    .search-input {
-        width: 100%; /* Full width input field */
-        border-radius: 4px 4px 0 0; /* Adjust border radius */
-        margin-bottom: 0; /* Remove margin bottom */
+    .search-form {
+        flex-direction: column;
     }
 
-    .search-btn {
-        width: 100%; /* Full width button */
-        border-radius: 0 0 4px 4px; /* Adjust border radius */
+    .btn {
+        font-size: 14px; /* Further adjusted font size */
     }
 
-    .about-img1, .about-img {
-        width: 100%; /* Full width images */
-        margin-left: 0; /* Reset margin */
+    .footer {
+        padding: 10px; /* Further reduced padding */
+    }
+
+    .footer p {
+        font-size: 12px; /* Further adjusted font size */
     }
 }

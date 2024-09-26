@@ -2,13 +2,18 @@ import React, { useState, useEffect } from "react";
 import Header from '../header/header';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import centerImage from '../../assets/images/center.jpg';
+import centerImage1 from '../../assets/images/center-1.jpg';
 import backgroundImage from '../../assets/images/home-4.jpg';
 import TrendingProducts from "../trendingproducts/trending";
 import SimpleFooter from '../Footers/SimpleFooters';
 import About from '../about/about';
 import './home.css';
+import WhatsAppButton from "../whatsapp/whatsapp";
+import SalesAndScrollingText from "../offer/offer";
 import BASE_URL from '../../config';
 import { BrowserRouter as Router, Route, Routes, useNavigate, useLocation } from "react-router-dom";
+
 
 // HomePage Component
 const HomePage = () => {
@@ -29,7 +34,8 @@ const HomePage = () => {
   return (
     <>
       <Header />
-      <section className="home" id="home" style={{ background: `url(${backgroundImage}) no-repeat`, backgroundSize: 'cover', height: '500px', width: '100%', marginTop: '70px' }}>
+      <section className="home" id="home" style={{ background: `url(${backgroundImage}) no-repeat`, backgroundSize: 'cover', height: '500px', width: '100%', marginTop: '0px' }}>
+
         <div className="content">
           <form className="search-form" onSubmit={handleSearch}>
             <input
@@ -47,12 +53,20 @@ const HomePage = () => {
           <p>The Fashion Glossary | A-Z Industry Words</p>
           <a href="#" className="btn">
             <span className="text text-1">SHOP NOW</span>
-            <span className="text text-2" aria-hidden="true">SHOP MORE</span>
+    
+            
+            
           </a>
+          <WhatsAppButton/>
         </div>
       </section>
       <TrendingProducts />
+     
+
+       <SalesAndScrollingText/>
+
       <TrendingProducts />
+
       <TrendingProducts />
       <About />
       <SimpleFooter />

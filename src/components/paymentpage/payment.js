@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'; // Import useParams to access route parameters
 import BASE_URL from '../../config';
+import Header from '../header/header';
 import './payment.css';
 import axios from 'axios';
+import SimpleFooter from '../Footers/SimpleFooters';
+
 
 const PaymentPage = () => {
   const { orderId } = useParams(); // Get orderId from the URL
@@ -34,11 +37,12 @@ const PaymentPage = () => {
   const handlePaymentSubmit = async () => {
     setIsProcessing(true); // Set processing state to true
     const token = localStorage.getItem('token');
+    const finalTotal = orderData?.order?.total - orderData?.order?.discountamount;
     const paymentData = {
       orderId: orderData?.order?.orderid,
       userid: orderData?.order?.userId,
       addressid: orderData?.address[0].addressid,
-      total: orderData?.order?.total,
+      total: finalTotal,
       address: orderData?.address[0], // Sending the first address
       items: 1,
       paymentMethod: selectedPayment,
@@ -73,24 +77,42 @@ const PaymentPage = () => {
   }
 
   return (
+    <>
+    <Header/>
+
     <div className="payment-page">
+      <div>
       <h1 className="payment-title">Payment Page</h1>
 
       {/* Order Summary */}
       <div className="order-summary">
         <h2>Order Summary</h2>
-        <p>
-          <strong>Total:</strong> ${orderData.order?.total}
-        </p>
+        <div className="order-total">
+  <p>
+    <span className="label"><strong>Total:</strong></span> 
+    <span className="value">${orderData.order?.total}</span>
+  </p>
+  <p>
+    <span className="label"><strong>Discount:</strong></span> 
+    <span className="value">${orderData.order?.discountamount}</span>
+  </p>
+  <p>
+    <span className="label final-total"><strong>Final Total:</strong></span> 
+    <span className="value">${orderData.order?.total - orderData.order?.discountamount}</span>
+  </p>
+</div>
+
 
         <h3>Items:</h3>
         <ul className="item-list">
           {orderData.items?.map((item) => (
-            <li key={item.OrderItemid}>
-              <span className="item-name">{item.productName}</span>
-              <span className="item-quantity">{item.quantity} x</span>
-              <span className="item-price">${item.price} = ${item.total}</span>
-            </li>
+           <li key={item.OrderItemid}>
+           <span className="item-name">{item.productName}</span>
+           <div className="item-details">
+             <span className="item-quantity">{item.quantity} x</span>
+             <span className="item-price">${item.price} = ${item.total}</span>
+           </div>
+         </li>
           ))}
         </ul>
 
@@ -165,8 +187,16 @@ const PaymentPage = () => {
             <button onClick={closeModal}>OK</button>
           </div>
         </div>
+
       )}
+
     </div>
+   
+
+    </div>
+    <SimpleFooter/>
+    </>
+
   );
 };
 
