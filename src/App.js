@@ -12,6 +12,8 @@ import PaymentPage from './components/paymentpage/payment.js';
 import Allproduct from './components/Allproducts/allproduct.js';
 import MyOrder from './components/myorder/myorder.js';
 import Wishlist from './components/wishlist/wishlist.js';
+import ForgotPassword from './components/ForgotPassword/forget.js';
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
@@ -24,6 +26,8 @@ function App() {
           <Routes>
 
             <Route exact path='/signin' element={<Signin />} />
+            <Route exact path='/forget' element={<ForgotPassword />} />
+
             <Route exact path='/search' element={<Search />} />
             <Route exact path='/myorders' element={<MyOrder />} />
             <Route exact path='/'element={<Landing />} />

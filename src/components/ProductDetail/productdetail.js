@@ -142,6 +142,7 @@ const ProductDetail = () => {
 
   
   <div className="product-info">
+    <h1>TEENS FASHION</h1>
     <h2>{product.ProductName}</h2>
     <p>{product.description}</p>
     <p><strong>Category:</strong> Shirt</p>

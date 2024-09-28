@@ -39,18 +39,62 @@
     line-height: 1.5;
 }
 
-/* Background transition effects (for switching images) */
-@keyframes backgroundSwitch {
+/* @keyframes backgroundSwitch {
     0% {
         background-image: url('../../assets/images/home-11.jpg');
     }
     50% {
         background-image: url('../../assets/images/home-9.jpg'); /* Another image */
-    }
+    /* }
     100% {
         background-image: url('../../assets/images/home-10.jpg'); /* Back to original */
+    
+  */
+
+
+  .home-section {
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden; /* Hide overflowing parts */
+  }
+  
+  @keyframes scrollLeftToRight {
+    0% {
+      background-position: -100% 0;
     }
+    100% {
+      background-position: 100% 0;
+    }
+  }
+  
+  @keyframes scrollRightToLeft {
+    0% {
+      background-position: 100% 0;
+    }
+    100% {
+      background-position: -100% 0;
+    }
+  }
+  
+  /* Apply the animation depending on the current scroll direction */
+  .leftToRight {
+    animation: scrollLeftToRight 10s linear infinite;
+  }
+  
+  .rightToLeft {
+    animation: scrollRightToLeft 10s linear infinite;
+  }
+  
+.image-scroll {
+    width: 100%;
+    height: 100vh;
+    background-size: 300% 100%; /* Adjust size to fit 3 images */
+    background-position: 0 0;
+    animation: scrollBackground 15s infinite linear; /* 15 seconds for smooth scrolling */
 }
+
+   
 
 /* Add animation to smoothly transition between background images */
 .home-section {

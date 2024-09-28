@@ -68,7 +68,6 @@ function Signin() {
 
     }
     return (
-
         <>
         <div 
       className="signin-container"
@@ -105,7 +104,7 @@ function Signin() {
 
         {/* Forgot Password link */}
         <p className="forgot-password-link">
-          <Link to="/forgot-password">Forgot Password?</Link>
+          <Link to="/forget">Forgot Password?</Link>
         </p>
 
         <p className="signup-link">
@@ -113,9 +112,12 @@ function Signin() {
         </p>
       </div>
     </div>
+    
+
     <ToastContainer />
       </>
     )
+
 
 }
 

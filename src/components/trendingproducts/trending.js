@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './trending.css';
 import { FaHeart } from 'react-icons/fa';
+import BASE_URL from '../../config';
 
 const TrendingProducts = () => {
   // State for trending products and wish list
@@ -15,10 +16,18 @@ const TrendingProducts = () => {
       try {
         const response = await fetch('http://ec2-3-225-106-91.compute-1.amazonaws.com:8080/api/getTrendingProducts');
         if (!response.ok) {
+
           throw new Error('Failed to fetch products');
         }
+
+      
+       
+       
         const data = await response.json();
-        setProducts(data); // Assuming the API returns an array of products
+       console.log(data[0])
+       
+       
+        setProducts(data[0]); // Assuming the API returns an array of products
       } catch (error) {
         setError(error.message);
       } finally {
@@ -53,12 +62,11 @@ const TrendingProducts = () => {
         {products.map((product) => (
           <div key={product.id} className="trending-product-card">
             <div className="trending-image-container">
-              <img src={product.imageUrl} alt={product.name} />
+              <img src={`${BASE_URL}/${product.imageUrl}`} alt={product.name} />
             </div>
             <div className="trending-product-info">
-              <h3>{product.name}</h3>
+              <h3>{product.ProductName}</h3>
               <p className="trending-product-price">{product.price}</p>
-              <p className="trending-product-description">{product.description}</p>
               <button
                 className="trending-add-to-cart-button"
                 onClick={() => toggleWishList(product.id)}
