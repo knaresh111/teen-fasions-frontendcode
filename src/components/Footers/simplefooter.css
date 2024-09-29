@@ -2,7 +2,7 @@
 .custom-footer {
   width: 100%;
   height: 450px;
-  background-color: hsla(0, 0%, 51%, 0.92); /* Black background */
+  background-color: hsla(0, 0%, 0%, 0.92); /* Black background */
   padding: 40px 0;
   text-align: center;
   font-family: 'Helvetica', 'Arial', sans-serif;

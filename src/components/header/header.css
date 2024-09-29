@@ -186,7 +186,7 @@
 	  display: flex;
 	  justify-content: space-between;
 	  align-items: center;
-	  width: 100%;
+	  width: 109%;
 	}
   
 	.custom-logo {
@@ -209,6 +209,7 @@
 	  align-items: center;
 	  justify-content: flex-end;
 	  gap: 10px; /* Adjust spacing for smaller screens */
+	  margin-right: 10px;
 	}
   
 	.custom-icon {
